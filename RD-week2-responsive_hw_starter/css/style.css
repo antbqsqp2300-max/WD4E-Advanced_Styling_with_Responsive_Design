@@ -130,7 +130,6 @@ header {
     border: 5px #000 solid;
     margin: 10px;
 } */
-
 /* 
 .label {
     display: none;
@@ -142,3 +141,23 @@ header {
 .child:hover .label {
     display: block;
 } */
+/* ============================================
+   MEDIA QUERIES — RESPONSIVE DESIGN
+============================================ */
+
+/* Truy vấn #1: Máy tính bảng (≥ 772px) — 2 cột */
+@media (min-width: 772px) {
+  div {
+    width: 45%;
+  }
+  div img {
+    max-height: 30vh;
+  }
+}
+
+/* Truy vấn #2: Màn hình lớn (≥ 998px) — 3 cột */
+@media (min-width: 998px) {
+  div {
+    width: 30%;
+  }
+}
