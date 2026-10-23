@@ -45,3 +45,70 @@ footer {
     text-align: center;
     padding: 20px;
 }
+/* ============================================
+   CÁC TRUY VẤN PHƯƠNG TIỆN (MEDIA QUERIES)
+============================================ */
+
+/* Yêu cầu 5: Máy tính bảng (Tablet) - Kích hoạt ở 772px */
+@media (min-width: 772px) {
+    .grid {
+        grid-template-columns: 1fr 1fr; /* Lưới 2 cột */
+    }
+    
+    figure {
+        border-radius: 50%; /* Bo tròn ảnh */
+        overflow: hidden; /* Cắt phần thừa để bo tròn hoàn hảo */
+    }
+
+    /* Hình thứ 3 chiếm cả 2 cột */
+    figure:nth-child(3) {
+        grid-column: span 2;
+        border-radius: 0; /* Trả lại góc vuông cho ảnh to */
+    }
+}
+
+/* Yêu cầu 6: Màn hình lớn (Desktop) - Kích hoạt ở 992px */
+@media (min-width: 992px) {
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr; /* Lưới 3 cột (tùy chọn) */
+    }
+
+    /* Hình thứ 3 chiếm cả 2 cột */
+    figure:nth-child(3) {
+        grid-column: span 2;
+    }
+
+    /* Xóa bán kính đường viền (bo tròn) khỏi tất cả hình */
+    figure {
+        border-radius: 0; 
+    }
+
+    /* Đảm bảo KHÔNG dùng max-width cho ảnh (ghi đè nếu có) */
+    figure img {
+        max-width: none;
+    }
+}
+
+/* Yêu cầu 7: Giảm chuyển động (Reduced Motion) */
+@media (prefers-reduced-motion: reduce) {
+    html, body {
+        scroll-behavior: auto !important; /* Xóa hành vi cuộn mượt */
+    }
+}
+
+/* Yêu cầu 8: Chế độ tối (Dark Mode) */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212; /* Nền tối */
+        color: #f1f1f1; /* Chữ sáng */
+    }
+
+    figure {
+        background-color: #1e1e1e;
+        border: 1px solid #000; /* Viền đen */
+    }
+
+    a {
+        color: #f1f1f1; /* Link màu sáng */
+    }
+}
